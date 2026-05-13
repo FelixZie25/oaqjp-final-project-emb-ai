@@ -1,3 +1,7 @@
+"""
+Flask server for Emotion Detection web application.
+"""
+
 # Import required Flask components
 from flask import Flask, render_template, request 
 
@@ -7,10 +11,13 @@ from emotion_detection import emotion_detector
 # Initialize Flask application
 app = Flask("Emotion Detector")
 
-
 # Route for emotion analysis API endpoint
 @app.route("/emotionDetector")
 def sent_detector():
+    """
+    Handles emotion detection requests and returns analysis result.
+    """
+
     # Get text input from URL query parameter
     text_to_analyze = request.args.get('textToAnalyze')
 
@@ -42,12 +49,14 @@ def sent_detector():
         f"The dominant emotion is {dominant_emotion}."
     )
 
-
 # Route for homepage (loads HTML page)
 @app.route("/")
 def render_index_page():
-    return render_template('index.html')
+    """
+    Renders homepage of the application.
+    """
 
+    return render_template('index.html')
 
 # Run Flask app on local network (port 5000)
 if __name__ == "__main__":
