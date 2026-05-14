@@ -3,10 +3,10 @@ Flask server for Emotion Detection web application.
 """
 
 # Import required Flask components
-from flask import Flask, render_template, request 
+from flask import Flask, render_template, request
 
 # Import your custom emotion detection function
-from emotion_detection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 # Initialize Flask application
 app = Flask("Emotion Detector")
